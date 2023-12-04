@@ -55,13 +55,13 @@ arrow_right.addEventListener("click", () => {
 	
 	divDot[i].classList.remove("dot_selected")
 	
-	if(i === (slides.length-1)){
-		i=0
-		NextSlide()
-	}else{
+	if(i < slides.length - 1){
 		i++
-		NextSlide()
+	}else{
+		i=0
 	}
+
+	NextSlide()
 })
 
 // Gestion du clic sur la flèche gauche
@@ -70,13 +70,13 @@ arrow_left.addEventListener("click", () => {
 
 	divDot[i].classList.remove("dot_selected")
 
-	if(i === 0){
-		i=slides.length-1
-		NextSlide()
-	}else{
+	if(i > 0){
 		i--
-		NextSlide()
+	}else{
+		i=slides.length-1
 	}
+
+	NextSlide()
 })
 
 
